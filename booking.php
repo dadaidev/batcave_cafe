@@ -1,45 +1,6 @@
 <?php
 include("includes/db.php");
 
-if ($_SERVER["REQUEST_METHOD"] === "POST") {
-
-    // Collect form data
-    $booking_description = $_POST['booking_description'];
-    $booking_time = $_POST['booking_time'];
-    $booking_date = $_POST['booking_date'];
-    $booking_pax = $_POST['booking_pax'];
-    $booking_tablenum = $_POST['booking_tablenum'];
-    $client_id = $_POST['client_id'];  // from session or form
-
-    // Default status
-    $booking_status = "Pending";
-
-    // Insert Query
-    $sql = "INSERT INTO booking 
-            (booking_description, booking_time, booking_date, booking_pax, booking_tablenum, booking_status, client_id)
-            VALUES (?, ?, ?, ?, ?, ?, ?)";
-
-    $stmt = $conn->prepare($sql);
-    $stmt->bind_param(
-        "sssissi",
-        $booking_description,
-        $booking_time,
-        $booking_date,
-        $booking_pax,
-        $booking_tablenum,
-        $booking_status,
-        $client_id
-    );
-
-    if ($stmt->execute()) {
-        echo "success";
-    } else {
-        echo "error: " . $stmt->error;
-    }
-
-    $stmt->close();
-    $conn->close();
-}
 ?>
 
 <!DOCTYPE html>
@@ -59,7 +20,6 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
     <?php include("includes/navbar.php"); ?>
 
-    <!-- BANNER -->
     <div class="booking-banner" id="menu">
         <div id="carouselExampleDark" class="carousel carousel-dark slide">
         <div class="carousel-indicators">

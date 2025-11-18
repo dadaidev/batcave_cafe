@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!DOCTYPE html> 
 <html lang="en">
 
 <head>
@@ -10,6 +10,9 @@
 </head>
 
 <body>
+
+    <?php $currentPage = basename($_SERVER['PHP_SELF']); ?>
+
     <nav class="navbar navbar-expand-lg sticky-top shadow-sm">
         <div class="container-fluid">
             <a class="navbar-brand" href="#">
@@ -23,6 +26,7 @@
             </button>
 
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
 
                     <li class="nav-item"><a class="nav-link" href="index.php">Home</a></li>
@@ -31,7 +35,7 @@
                     <li class="nav-item"><a class="nav-link" href="about.php">About</a></li>
 
                     <li class="nav-item">
-                        <a class="announcement" href="index.php" for="#announcement"><i class="bi bi-bell"></i></a>
+                        <a class="announcement" href="index.php"><i class="bi bi-bell"></i></a>
                     </li>
 
                     <li class="nav-item dropdown">
@@ -54,16 +58,22 @@
 
                 </ul>
 
-                <form class="btn d-flex" role="search">
-                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" />
+                <?php if ($currentPage == 'menu.php'): ?>
+                <form class="btn d-flex" action="menu.php" method="GET">
+                    <input class="form-control me-2" 
+                        type="search" 
+                        name="search"
+                        placeholder="Search menu..." 
+                        value="<?php echo isset($_GET['search']) ? htmlspecialchars($_GET['search']) : ''; ?>">
                     <button class="btn-search" type="submit">Search</button>
                 </form>
+                <?php endif; ?>
 
             </div>
         </div>
     </nav>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
-</body>
 
+</body>
 </html>
