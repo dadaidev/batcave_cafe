@@ -33,9 +33,10 @@
                     <li class="nav-item"><a class="nav-link" href="menu.php">Menu</a></li>
                     <li class="nav-item"><a class="nav-link" href="booking.php">Bookings</a></li>
                     <li class="nav-item"><a class="nav-link" href="about.php">About</a></li>
+                    
 
                     <li class="nav-item">
-                        <a class="announcement" href="index.php"><i class="bi bi-bell"></i></a>
+                        <a class="announcement" href="announcement.php"><i class="bi bi-bell"></i></a>
                     </li>
 
                     <li class="nav-item dropdown">
@@ -49,7 +50,7 @@
 
                         <?php if (isset($_SESSION['username'])): ?>
                             <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="profile.php">Profile</a></li>
+                                <li><a class="dropdown-item" href="user_role.php">Profile</a></li>
                                 <li><hr class="dropdown-divider"></li>
                                 <li><a class="dropdown-item" href="logout.php">Logout</a></li>
                             </ul>

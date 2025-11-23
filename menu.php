@@ -42,21 +42,21 @@
             <img src="images/menu_1.jpg" class="d-block w-100" alt="...">
             <div class="carousel-caption d-none d-md-block">
                 <h5>Try our Limited Frappe!</h5>
-                <p> Lorem eme eme</p>
+                <p>A cozy, curated café menu featuring fresh, flavorful bites and thoughtfully crafted drinks designed to delight every taste.</p>
             </div>
             </div>
             <div class="carousel-item" data-bs-interval="2000">
             <img src="images/menu_2.jpg" class="d-block w-100" alt="...">
             <div class="carousel-caption d-none d-md-block">
                 <h5>Book an Event!</h5>
-                <p>Lorem eme eme</p>
+                <p>A smooth, hassle-free booking experience that lets you reserve your spot quickly, confidently, and with total ease.</p>
             </div>
             </div>
             <div class="carousel-item">
             <img src="images/menu_3.jpg" class="d-block w-100" alt="...">
             <div class="carousel-caption d-none d-md-block">
                 <h5>Get a reservation for table!</h5>
-                <p>Lorem eme eme</p>
+                <p>Secure your perfect spot with a quick and easy table reservation made just for you</p>
             </div>
             </div>
         </div>

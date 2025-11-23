@@ -33,52 +33,7 @@ include("includes/db.php");
             <a href="booking.php" class="btn-bat">Book a Table</a>
         </div>
     </div>
-
-    <!-- announcement -->
-    <section class="announcements" id="announcement">
-        <div class="announcements-container">
-            <h2 class="section-title">From the Cave:Announcements </h2>
-            <p class="section-subtitle">
-                Stay updated with the latest happenings, seasonal brews, and special offers at The Bat Cave Café.
-            </p>
-
-            <div class="announcement-grid">
-                <div class="announcement-card">
-                    <div class="announcement-image">
-                        <img src="images/announcement_1.jpg" alt="Midnight Jazz Night">
-                    </div>
-                    <div class="announcement-content">
-                        <h3>Midnight Jazz Night </h3>
-                        <p>Join us every Friday for live jazz performances and signature night brews. Experience the
-                            rhythm of the night with smooth melodies and aromatic blends.</p>
-                        <span class="announcement-date">Every Friday | 8:00 PM - 12:00 AM</span>
-                    </div>
-                </div>
-
-                <div class="announcement-card">
-                    <div class="announcement-image">
-                        <img src="images/announcement_2.jpg" alt="Halloween Coffee Festival">
-                    </div>
-                    <div class="announcement-content">
-                        <h3>Halloween Coffee Festival </h3>
-                        <p>Celebrate spooky season with our limited-edition Ghoul's Potion and Dark Choco Witch Brew.
-                            Costumes are encouraged — free treat for the best outfit!</p>
-                        <span class="announcement-date">October 28–31, 2025</span>
-                    </div>
-                </div>
-
-                <div class="announcement-card">
-                    <div class="announcement-image">
-                        <img src="images/announcement_3.jpg" alt="New Menu Launch">
-                    </div>
-                    <div class="announcement-content">
-                        <h3>New Menu Launch </h3>
-                        <p>We’re brewing something special! Get ready for our new selection of moonlit desserts and
-                            hand-crafted cold brews — coming this November.</p>
-                        <span class="announcement-date">Launching November 20, 2025</span>
-                    </div>
-    </section>
-
+    
     <!-- best seellers -->
     <section class="best-sellers" id="best-sellers">
         <div class="best-sellers-container">
@@ -151,75 +106,76 @@ include("includes/db.php");
 
     <!-- reviews -->
     <section class="customer-reviews" id="reviews">
-    <div class="reviews-container">
-        <h2 class="section-title">Sips & Opinions</h2>
-        <p class="section-subtitle">
-            See why coffee lovers and night owls choose The Bat Cave Café for their cozy nights.
-        </p>
+        <div class="reviews-container">
+            <h2 class="section-title">Sips & Opinions</h2>
+            <p class="section-subtitle">
+                See why coffee lovers and night owls choose The Bat Cave Café for their cozy nights.
+            </p>
 
-        <div class="reviews-grid">
-            <div class="review-card">
-                <div class="reviewer-photo">
-                    <img src="images/review_1.jpg" alt="Jane Doe">
-                </div>
-                <div class="review-content">
-                    <h3>Mingyu Batumbakal</h3>
-                    <div class="review-rating">
-                        ★★★★☆
+            <div class="reviews-grid">
+                <div class="review-card">
+                    <div class="reviewer-photo">
+                        <img src="images/review_1.jpg" alt="Jane Doe">
                     </div>
-                    <p>
-                        “Super sarap ng kanilang soda drinks!! Nagustuhan din ng aking hubby na si Wonu! #Babalikbalikan!”
-                    </p>
+                    <div class="review-content">
+                        <h3>Mingyu Batumbakal</h3>
+                        <div class="review-rating">
+                            ★★★★☆
+                        </div>
+                        <p>
+                            “Super sarap ng kanilang soda drinks!! Nagustuhan din ng aking hubby na si Wonu!
+                            #Babalikbalikan!”
+                        </p>
+                    </div>
                 </div>
-            </div>
 
-            <div class="review-card">
-                <div class="reviewer-photo">
-                    <img src="images/review_2.jpg" alt="Mark Smith">
-                </div>
-                <div class="review-content">
-                    <h3>Dokyeom Manalo</h3>
-                    <div class="review-rating">
-                        ★★★★★
+                <div class="review-card">
+                    <div class="reviewer-photo">
+                        <img src="images/review_2.jpg" alt="Mark Smith">
                     </div>
-                    <p>
-                        “Thank you so much sa mga staffs! Very affordable and quality lahat ng drinks.”
-                    </p>
+                    <div class="review-content">
+                        <h3>Dokyeom Manalo</h3>
+                        <div class="review-rating">
+                            ★★★★★
+                        </div>
+                        <p>
+                            “Thank you so much sa mga staffs! Very affordable and quality lahat ng drinks.”
+                        </p>
+                    </div>
                 </div>
-            </div>
 
-            <div class="review-card">
-                <div class="reviewer-photo">
-                    <img src="images/review_3.jpg" alt="Emily Johnson">
-                </div>
-                <div class="review-content">
-                    <h3>Nayeon Dela Cruz</h3>
-                    <div class="review-rating">
-                        ★★★★☆
+                <div class="review-card">
+                    <div class="reviewer-photo">
+                        <img src="images/review_3.jpg" alt="Emily Johnson">
                     </div>
-                    <p>
-                        “Very worth it ang mga foods!”
-                    </p>
+                    <div class="review-content">
+                        <h3>Nayeon Dela Cruz</h3>
+                        <div class="review-rating">
+                            ★★★★☆
+                        </div>
+                        <p>
+                            “Very worth it ang mga foods!”
+                        </p>
+                    </div>
                 </div>
-            </div>
 
-            <div class="review-card">
-                <div class="reviewer-photo">
-                    <img src="images/review_4.jpg" alt="David Lee">
-                </div>
-                <div class="review-content">
-                    <h3>Maloi Cole</h3>
-                    <div class="review-rating">
-                        ★★★★★
+                <div class="review-card">
+                    <div class="reviewer-photo">
+                        <img src="images/review_4.jpg" alt="David Lee">
                     </div>
-                    <p>
-                        “Pet friendly!! Yes!!! Punta na kayo here!”
-                    </p>
+                    <div class="review-content">
+                        <h3>Maloi Cole</h3>
+                        <div class="review-rating">
+                            ★★★★★
+                        </div>
+                        <p>
+                            “Pet friendly!! Yes!!! Punta na kayo here!”
+                        </p>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-</section>
+    </section>
 
 
     <?php include("includes/footer.php"); ?>

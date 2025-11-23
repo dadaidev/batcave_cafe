@@ -21,8 +21,8 @@ include("includes/db.php");
 
     <?php include("includes/navbar.php") ?>
 
-    <div class="about-pic">
-        <img src="">
+    <div class="about-pics">
+        <img src="images/soloo.jpg">
     </div>
 
     <div class="about-container">
@@ -30,7 +30,7 @@ include("includes/db.php");
             <div class="col-6">
                 <div class="about-cafe">
                     <h1 class="about">About</h1>
-                    <p class="about-sentence">Our cafe.....</p>
+                    <p class="about-sentence">Step into Batcave Cafe, where shadowy ambiance meets cozy comfort, and every corner sparks a sense of adventure. Savor expertly crafted drinks and treats in a space inspired by mystery, excitement, and the thrill of the night.</p>
                 </div>
             </div>
             <div class="col-6">

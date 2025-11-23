@@ -61,39 +61,39 @@ include("includes/db.php");
         </div>
     </div>
 
-    <div class="container">
+    <div class="seating-container">
         <div class="row">
             <div class="col-12">
-            <h3 class="title-available text-align-center">Available table</h3>
+            <h3 class="title-available">Available table</h3>
             </div>
         </div>
         <div class="row p-5 m-4">
             <div class="col-3">
-                <img src="#" class="img-table">
+                <img src="images/soloo.jpg" class="img-table">
                 <h3 class="title-tbl"> Solo Signature </h3>
-                <h5 class="title-seats"> Seats: </h5>
-                <h5 class="title-price"> Price: ₱ </h5>
+                <h5 class="title-seats"> Seats: 1-2 person</h5>
+                <h5 class="title-price"> Price: ₱ 75</h5>
                 <button class="book-now">Book Now</button>
             </div>
             <div class="col-3">
-                <img src="#" class="img-table">
-                <h3 class="title-tbl"> Solo Signature </h3>
-                <h5 class="title-seats"> Seats:  </h5>
-                <h5 class="title-price"> Price: ₱ </h5>
+                <img src="images/midd.jpg" class="img-table">
+                <h3 class="title-tbl"> Mid Signature </h3>
+                <h5 class="title-seats"> Seats: 3-4 person </h5>
+                <h5 class="title-price"> Price: ₱ 75</h5>
                 <button class="book-now">Book Now</button>
             </div>
             <div class="col-3">
-                <img src="#" class="img-table">
-                <h3 class="title-tbl"> Solo Signature </h3>
-                <h5 class="title-seats"> Seats:  </h5>
-                <h5 class="title-price"> Price: ₱ </h5>
+                <img src="images/groupp.jpg" class="img-table">
+                <h3 class="title-tbl"> Group Signature </h3>
+                <h5 class="title-seats"> Seats: 6 person</h5>
+                <h5 class="title-price"> Price: ₱ 75</h5>
                 <button class="book-now">Book Now</button>
             </div>
             <div class="col-3">
-                <img src="#" class="img-table">
-                <h3 class="title-tbl"> Solo Signature </h3>
-                <h5 class="title-seats"> Seats: </h5>
-                <h5 class="title-price"> Price: ₱ </h5>
+                <img src="images/eventss.jpg" class="img-table">
+                <h3 class="title-tbl"> Event's Signature </h3>
+                <h5 class="title-seats"> Seats: 6 and more</h5>
+                <h5 class="title-price"> Price: ₱ 75</h5>
                 <button class="book-now">Book Now</button>
             </div>
         </div>
