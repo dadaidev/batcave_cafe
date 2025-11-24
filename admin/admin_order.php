@@ -4,7 +4,7 @@ require_once __DIR__ . '/admin_authorization.php';
 require 'admin_header.php';
 require_login();
 
-// Fetch all order items with joins for display
+// Fetch the orders ito
 $sql = "SELECT oi.*, m.menu_name, m.menu_category, b.booking_date, b.booking_start_time, c.client_fname, c.client_lname
         FROM order_items oi
         LEFT JOIN menu m ON oi.menu_id = m.menu_id
