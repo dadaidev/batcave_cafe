@@ -46,7 +46,7 @@ include("includes/db.php");
         <div class="column card form-card">
             <h1 class="role">Are you a..</h1>
             <div class="role-btn">
-                <a href="#"><button class="btn-admin" type="button">Admin</button></a>
+                <a href="admin/admin_login.php"><button class="btn-admin" type="button">Admin</button></a>
                 <a href="customer_login.php"><button class="btn-customer" type="button">Customer</button></a>
             </div>
             <p class="intro">Welcome to Batcave Cafe</p>
