@@ -30,44 +30,39 @@
 <body>
     <?php include "includes/navbar.php"; ?>
 
-    <div class="menu-banner" id="menu">
-        <div id="carouselExampleDark" class="carousel carousel-dark slide">
-        <div class="carousel-indicators">
-            <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-            <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1" aria-label="Slide 2"></button>
-            <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="2" aria-label="Slide 3"></button>
-        </div>
-        <div class="carousel-inner">
-            <div class="carousel-item active" data-bs-interval="10000">
-            <img src="images/menu_1.jpg" class="d-block w-100" alt="...">
-            <div class="carousel-caption d-none d-md-block">
-                <h5>Try our Limited Frappe!</h5>
-                <p>A cozy, curated café menu featuring fresh, flavorful bites and thoughtfully crafted drinks designed to delight every taste.</p>
+    <div class="menu-banner">
+        <div id="carouselExampleDark" class="carousel slide carousel-fade" data-bs-ride="carousel">
+            
+            <div class="carousel-indicators">
+                <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active"></button>
+                <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1"></button>
+                <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="2"></button>
             </div>
+
+            <div class="carousel-inner">
+
+                <div class="carousel-item active" data-bs-interval="5000">
+                    <img src="images/menu_1.jpg" class="d-block w-100 carousel-img" alt="">
+                </div>
+
+                <div class="carousel-item" data-bs-interval="5000">
+                    <img src="images/menu_2.jpg" class="d-block w-100 carousel-img" alt="">
+                </div>
+
+                <div class="carousel-item">
+                    <img src="images/menu_3.jpg" class="d-block w-100 carousel-img" alt="">
+                </div>
+
             </div>
-            <div class="carousel-item" data-bs-interval="2000">
-            <img src="images/menu_2.jpg" class="d-block w-100" alt="...">
-            <div class="carousel-caption d-none d-md-block">
-                <h5>Book an Event!</h5>
-                <p>A smooth, hassle-free booking experience that lets you reserve your spot quickly, confidently, and with total ease.</p>
-            </div>
-            </div>
-            <div class="carousel-item">
-            <img src="images/menu_3.jpg" class="d-block w-100" alt="...">
-            <div class="carousel-caption d-none d-md-block">
-                <h5>Get a reservation for table!</h5>
-                <p>Secure your perfect spot with a quick and easy table reservation made just for you</p>
-            </div>
-            </div>
-        </div>
-        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Previous</span>
-        </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Next</span>
-        </button>
+
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon"></span>
+            </button>
+
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="next">
+                <span class="carousel-control-next-icon"></span>
+            </button>
+
         </div>
     </div>
 
@@ -78,7 +73,6 @@
         <button class="filter-btn" data-filter="Refreshing">Refreshing</button>
         <button class="filter-btn" data-filter="Snacks">Snacks</button>
         <button class="filter-btn" data-filter="Meals">Meals</button>
-        <button class="filter-btn" data-filter="Equipment">Equipment</button>
     </div>
 
     <div class="menu-bg">
