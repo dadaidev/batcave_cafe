@@ -50,7 +50,7 @@
 
                         <?php if (isset($_SESSION['username'])): ?>
                             <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="user_role.php">Profile</a></li>
+                                <li><a class="dropdown-item" href="profile.php">Profile</a></li>
                                 <li><hr class="dropdown-divider"></li>
                                 <li><a class="dropdown-item" href="logout.php">Logout</a></li>
                             </ul>
