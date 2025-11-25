@@ -4,7 +4,6 @@
   $title='admin_client';
   require 'admin_header.php';
 
-  // pagination simple
   $page = max(1, (int)($_GET['page'] ?? 1));
   $perPage = 20;
   $offset = ($page-1)*$perPage;
@@ -32,8 +31,8 @@
 
 
 <div class="page-container">
-    <h1 class="page-title">TMBCC Clients</h1>
-    <a href="client_add.php" class="btn btn-success btn-md">Add Client</a>
+    <h1 class="page-title">TMBCC Users</h1>
+    <a href="client_add.php" class="btn btn-success btn-md">Add Users</a>
 
     <table class="table-client">
         <thead>

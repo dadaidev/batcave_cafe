@@ -25,7 +25,7 @@ require_once 'admin_authorization.php';
     <nav class="admin-nav">
         <ul>
             <li><a href="admin_dashboard.php">Dashboard</a></li>
-            <li><a href="admin_client.php">Clients</a></li>
+            <li><a href="admin_client.php">Users</a></li>
             <li><a href="admin_menu.php">Menu</a></li>
             <li><a href="admin_order.php">Orders</a></li>
             <li><a href="admin_booking.php">Bookings</a></li>
