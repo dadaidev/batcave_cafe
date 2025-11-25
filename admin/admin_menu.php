@@ -45,7 +45,7 @@
             <tr>
                 <td><?= $item['menu_id'] ?></td>
                 <td><?= $item['menu_name'] ?></td>
-                <td><img src="../images/<?= htmlspecialchars($item['menu_image']) ?>" class="menu-image"></td>
+                <td><img src="../<?= htmlspecialchars($item['menu_image']) ?>" class="menu-image"></td>
                 <td><?= $item['menu_category'] ?></td>
                 <td>₱<?= number_format($item['menu_price'],2) ?></td>
                 <td><?= $item['menu_description'] ?></td>

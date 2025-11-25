@@ -504,3 +504,407 @@ a {
     background-color: #e74c3c;
 }
 
+
+
+/*booking*/
+
+.booking-container {
+    margin: auto;
+    padding:10px;
+}
+
+.booking-title {
+    font-size: 38px;
+    font-weight: 700;
+    margin-top:20px;
+    padding:10px 10px;
+    text-align: center;
+    margin-bottom: 20px;
+    color: #4b2e2e;
+}
+
+.table-booking {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+    background-color: #4b2e2e;
+    border-radius: 8px;
+    overflow: hidden;
+    padding:10px 20px;
+    margin:10px;
+}
+
+.table-booking th,
+.table-booking td {
+    padding: 12px 15px;
+    text-align: left;
+    color:#ffffff;
+}
+
+.table-booking thead {
+    background-color: #4b2e2e;
+}
+
+.table-booking th {  
+    background-color: #3b1f1f;
+    font-weight: 600;
+}
+
+.table-booking tr:nth-child(even) {
+    background-color: #532d2d;
+}
+
+.table-bookingr tr:hover {
+    background-color: #6d6259; 
+    color: #4b2e2e; 
+}
+
+
+.btn-edit, .btn-delete {
+    padding: 6px 12px;
+    border-radius: 5px;
+    font-size: 13px;
+    font-weight: 500;
+    color: #fff;
+    text-decoration: none;
+    transition: 0.2s;
+}
+
+.btn-edit {
+    background-color: #a67c52;
+}
+
+.btn-edit:hover {
+    background-color: #d4b084;
+}
+
+.btn-delete {
+    background-color: #c0392b;
+}
+
+.btn-delete:hover {
+    background-color: #e74c3c;
+}
+
+*seats*/
+
+.seats-container {
+    margin: auto;
+    padding:10px;
+}
+
+.seats-title {
+    font-size: 38px;
+    font-weight: 700;
+    margin-top:20px;
+    padding:10px 10px;
+    text-align: center;
+    margin-bottom: 20px;
+    color: #4b2e2e;
+}
+
+.table-seats {
+    width: 100%;
+    bseats-collapse: collapse;
+    margin-top: 15px;
+    background-color: #4b2e2e;
+    bseats-radius: 8px;
+    overflow: hidden;
+    padding:10px 20px;
+    margin:10px;
+}
+
+.table-seats th,
+.table-seats td {
+    padding: 12px 15px;
+    text-align: left;
+    color:#ffffff;
+}
+
+.table-seats thead {
+    background-color: #4b2e2e;
+}
+
+.table-seats th {  
+    background-color: #3b1f1f;
+    font-weight: 600;
+}
+
+.table-seats tr:nth-child(even) {
+    background-color: #532d2d;
+}
+
+.table-seats tr:hover {
+    background-color: #6d6259; 
+    color: #4b2e2e; 
+}
+
+
+.btn-edit, .btn-delete {
+    padding: 6px 12px;
+    border-radius: 5px;
+    font-size: 13px;
+    font-weight: 500;
+    color: #fff;
+    text-decoration: none;
+    transition: 0.2s;
+}
+
+.btn-edit {
+    background-color: #a67c52;
+}
+
+.btn-edit:hover {
+    background-color: #d4b084;
+}
+
+.btn-delete {
+    background-color: #c0392b;
+}
+
+.btn-delete:hover {
+    background-color: #e74c3c;
+}
+
+/*equipment*/
+
+.equipment-container {
+    margin: auto;
+    padding:10px;
+}
+
+.equipment-title {
+    font-size: 38px;
+    font-weight: 700;
+    margin-top:20px;
+    padding:10px 10px;
+    text-align: center;
+    margin-bottom: 20px;
+    color: #4b2e2e;
+}
+
+.table-equipment {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+    background-color: #4b2e2e;
+    border-radius: 8px;
+    overflow: hidden;
+    padding:10px 20px;
+    margin:10px;
+}
+
+.table-equipment th,
+.table-equipment td {
+    padding: 12px 15px;
+    text-align: left;
+    color:#ffffff;
+}
+
+.table-equipment thead {
+    background-color: #4b2e2e;
+}
+
+.table-equipment th {  
+    background-color: #3b1f1f;
+    font-weight: 600;
+}
+
+.table-equipment tr:nth-child(even) {
+    background-color: #532d2d;
+}
+
+.table-equipment tr:hover {
+    background-color: #6d6259; 
+    color: #4b2e2e; 
+}
+
+
+.btn-edit, .btn-delete {
+    padding: 6px 12px;
+    border-radius: 5px;
+    font-size: 13px;
+    font-weight: 500;
+    color: #fff;
+    text-decoration: none;
+    transition: 0.2s;
+}
+
+.btn-edit {
+    background-color: #a67c52;
+}
+
+.btn-edit:hover {
+    background-color: #d4b084;
+}
+
+.btn-delete {
+    background-color: #c0392b;
+}
+
+.btn-delete:hover {
+    background-color: #e74c3c;
+}
+
+
+/*seats*/
+
+.seats-container {
+    margin: auto;
+    padding:10px;
+}
+
+.seats-title {
+    font-size: 38px;
+    font-weight: 700;
+    margin-top:20px;
+    padding:10px 10px;
+    text-align: center;
+    margin-bottom: 20px;
+    color: #4b2e2e;
+}
+
+.table-seats {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+    background-color: #4b2e2e;
+    border-radius: 8px;
+    overflow: hidden;
+    padding:10px 20px;
+    margin:10px;
+}
+
+.table-seats th,
+.table-seats td {
+    padding: 12px 15px;
+    text-align: left;
+    color:#ffffff;
+}
+
+.table-seats thead {
+    background-color: #4b2e2e;
+}
+
+.table-seats th {  
+    background-color: #3b1f1f;
+    font-weight: 600;
+}
+
+.table-seats tr:nth-child(even) {
+    background-color: #532d2d;
+}
+
+.table-seats tr:hover {
+    background-color: #6d6259; 
+    color: #4b2e2e; 
+}
+
+
+.btn-edit, .btn-delete {
+    padding: 6px 12px;
+    border-radius: 5px;
+    font-size: 13px;
+    font-weight: 500;
+    color: #fff;
+    text-decoration: none;
+    transition: 0.2s;
+}
+
+.btn-edit {
+    background-color: #a67c52;
+}
+
+.btn-edit:hover {
+    background-color: #d4b084;
+}
+
+.btn-delete {
+    background-color: #c0392b;
+}
+
+.btn-delete:hover {
+    background-color: #e74c3c;
+}
+
+
+/*payment*/
+
+.payment-container {
+    margin: auto;
+    padding:10px;
+}
+
+.payment-title {
+    font-size: 38px;
+    font-weight: 700;
+    margin-top:20px;
+    padding:10px 10px;
+    text-align: center;
+    margin-bottom: 20px;
+    color: #4b2e2e;
+}
+
+.table-payment {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+    background-color: #4b2e2e;
+    border-radius: 8px;
+    overflow: hidden;
+    padding:10px 20px;
+    margin:10px;
+}
+
+.table-payment th,
+.table-payment td {
+    padding: 12px 15px;
+    text-align: left;
+    color:#ffffff;
+}
+
+.table-payment thead {
+    background-color: #4b2e2e;
+}
+
+.table-payment th {  
+    background-color: #3b1f1f;
+    font-weight: 600;
+}
+
+.table-payment tr:nth-child(even) {
+    background-color: #532d2d;
+}
+
+.table-payment tr:hover {
+    background-color: #6d6259; 
+    color: #4b2e2e; 
+}
+
+
+.btn-edit, .btn-delete {
+    padding: 6px 12px;
+    border-radius: 5px;
+    font-size: 13px;
+    font-weight: 500;
+    color: #fff;
+    text-decoration: none;
+    transition: 0.2s;
+}
+
+.btn-edit {
+    background-color: #a67c52;
+}
+
+.btn-edit:hover {
+    background-color: #d4b084;
+}
+
+.btn-delete {
+    background-color: #c0392b;
+}
+
+.btn-delete:hover {
+    background-color: #e74c3c;
+}
+
