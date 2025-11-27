@@ -97,7 +97,6 @@
                             <p class="menu-price">₱<?php echo number_format($menu['menu_price'], 2); ?></p>
                             <div class="menu-buttons">
                                 <input type="hidden" name="menu_id" value="<?php echo $menu['menu_id']; ?>">
-                                <button type="submit" name="add_to_cart" class="btn add-cart-btn">Add to Cart</button>
                                 <a href="payment_order.php?menu_id=<?php echo $menu['menu_id']; ?>" class="btn buy-now-btn">
                                     Buy Now
                                 </a>

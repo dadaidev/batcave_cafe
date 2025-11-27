@@ -22,6 +22,6 @@ if ($menu) {
 $stmt = $pdo->prepare("DELETE FROM menu WHERE menu_id = ?");
 $stmt->execute([$id]);
 
-header("Location: menu.php?deleted=1");
+header("Location: admin_menu.php?deleted=1");
 exit;
 ?>

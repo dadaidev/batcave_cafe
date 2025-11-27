@@ -4,9 +4,9 @@ require_once __DIR__ . '/admin_authorization.php';
 require 'admin_header.php';
 require_login();
 
-// Fetch all seats
+// Fetch all tables
 $stmt = $pdo->query("SELECT * FROM table_seats ORDER BY table_number ASC");
-$seats = $stmt->fetchAll(PDO::FETCH_ASSOC);
+$tables = $stmt->fetchAll(PDO::FETCH_ASSOC);
 ?>
 
 <!doctype html>
@@ -14,7 +14,7 @@ $seats = $stmt->fetchAll(PDO::FETCH_ASSOC);
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bat Café</title>
+    <title>Bat Café - Tables</title>
     <link rel="stylesheet" href="style.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
@@ -23,16 +23,15 @@ $seats = $stmt->fetchAll(PDO::FETCH_ASSOC);
 </head>
 <body>
 
+<div class="tables-container container mt-4">
+    <h1 class="mb-4">TMBCC Tables</h1>
+    <a href="add_seats.php" class="btn btn-success mb-3">Add Table</a>
 
-<div class="seats-container">
-    <h1 class="seats-title">TMBCC Tables</h1>
-    <a href="seats_add.php" class="btn btn-success btn-md">Add seats</a>
-
-    <table class="table-booking">
+    <table class="table table-bordered table-hover">
         <thead class="table-dark">
             <tr>
                 <th>ID</th>
-                <th>Table #</th>
+                <th>Name</th>
                 <th>Capacity</th>
                 <th>Status</th>
                 <th>Image</th>
@@ -41,15 +40,14 @@ $seats = $stmt->fetchAll(PDO::FETCH_ASSOC);
             </tr>
         </thead>
         <tbody>
-
-        <?php foreach ($seats as $row): ?>
+        <?php foreach ($tables as $row): ?>
             <tr>
                 <td><?= $row['table_id'] ?></td>
-                <td><?= htmlspecialchars($row['table_number']) ?></td>
+                <td><?= htmlspecialchars($row['table_name']) ?></td>
                 <td><?= htmlspecialchars($row['capacity']) ?></td>
 
                 <td>
-                    <form action="seats_status_update.php" method="POST">
+                    <form action="update_table_status.php" method="POST">
                         <input type="hidden" name="table_id" value="<?= $row['table_id'] ?>">
                         <select name="status" class="form-select form-select-sm" onchange="this.form.submit()">
                             <option value="Available" <?= $row['status']=="Available"?"selected":"" ?>>Available</option>
@@ -69,20 +67,15 @@ $seats = $stmt->fetchAll(PDO::FETCH_ASSOC);
                 <td>₱<?= number_format($row['table_price'],2) ?></td>
 
                 <td>
-                    <a href="admin_table_edit.php?id=<?= $row['table_id'] ?>" class="btn btn-warning btn-sm">Edit</a>
-
-                    <a href="admin_table_delete.php?id=<?= $row['table_id'] ?>"
-                       class="btn btn-danger btn-sm"
-                       onclick="return confirm('Delete this table?')">
-                        Delete
-                    </a>
+                    <a href="edit_seats.php?id=<?= $row['table_id'] ?>" class="btn btn-warning btn-sm">Edit</a>
+                    <a href="delete_seats.php?id=<?= $row['table_id'] ?>" class="btn btn-danger btn-sm"
+                       onclick="return confirm('Delete this table?')">Delete</a>
                 </td>
             </tr>
         <?php endforeach; ?>
-
         </tbody>
     </table>
-
 </div>
+
 </body>
 </html>

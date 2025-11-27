@@ -1,76 +1,90 @@
 <?php
-session_start();
-include "includes/db.php";
+    session_start();
+    include "includes/db.php";
 
-if (!isset($_SESSION['client_id'])) {
-    header("Location: customer_login.php");
-    exit();
-}
-
-if (!isset($_GET['menu_id'])) {
-    die("No item selected.");
-}
-
-$menu_id = intval($_GET['menu_id']);
-$stmt = $conn->prepare("SELECT * FROM menu WHERE menu_id = ?");
-$stmt->bind_param("i", $menu_id);
-$stmt->execute();
-$result = $stmt->get_result();
-
-if ($result->num_rows == 0) {
-    die("Menu item not found.");
-}
-
-$menu = $result->fetch_assoc();
-
-$quantity = 1;
-$price = floatval($menu['menu_price']);
-$subtotal = $price;
-$total = $price;
-
-if ($_SERVER["REQUEST_METHOD"] === "POST") {
-
-    $quantity = intval($_POST['quantity']);
-    $price = floatval($menu['menu_price']);
-    $subtotal = $price * $quantity;
-    $total = $subtotal;
-
-    $client_id = $_SESSION['client_id'];
-    $payment_method = $_POST['payment_method'];
-    $payment_reference = $_POST['payment_reference'] ?? null;
-    $temperature = $_POST['temperature'] ?? null;
-
-    $payment_proof = null;
-    if (!empty($_FILES['payment_proof']['name'])) {
-        $targetDir = "uploads/";
-        if (!is_dir($targetDir)) {
-            mkdir($targetDir, 0777, true);
-        }
-        $fileName = time() . "_" . basename($_FILES["payment_proof"]["name"]);
-        $targetFile = $targetDir . $fileName;
-        move_uploaded_file($_FILES["payment_proof"]["tmp_name"], $targetFile);
-        $payment_proof = $targetFile;
+    if (! isset($_SESSION['client_id'])) {
+        header("Location: customer_login.php");
+        exit();
     }
 
-    $booking_id = NULL; 
-    $stmt_order = $conn->prepare("INSERT INTO order_items (booking_id, menu_id, quantity, price) VALUES (?, ?, ?, ?)");
-    $stmt_order->bind_param("iiid", $booking_id, $menu_id, $quantity, $price);
-    $stmt_order->execute();
-    $order_item_id = $stmt_order->insert_id;
+    if (! isset($_GET['menu_id'])) {
+        die("No item selected.");
+    }
 
-    $stmt_payment = $conn->prepare("
-        INSERT INTO payment 
+    $menu_id = intval($_GET['menu_id']);
+    $stmt    = $conn->prepare("SELECT * FROM menu WHERE menu_id = ?");
+    $stmt->bind_param("i", $menu_id);
+    $stmt->execute();
+    $result = $stmt->get_result();
+
+    if ($result->num_rows == 0) {
+        die("Menu item not found.");
+    }
+
+    $menu = $result->fetch_assoc();
+
+    $quantity = 1;
+    $price    = floatval($menu['menu_price']);
+    $subtotal = $price;
+    $total    = $price;
+
+    if ($_SERVER["REQUEST_METHOD"] === "POST") {
+
+        $quantity = intval($_POST['quantity']);
+        $price    = floatval($menu['menu_price']);
+        $subtotal = $price * $quantity;
+        $total    = $subtotal;
+
+        $client_id         = $_SESSION['client_id'];
+        $payment_method    = $_POST['payment_method'];
+        $payment_reference = $_POST['payment_reference'] ?? null;
+        $temperature       = $_POST['temperature'] ?? null;
+
+        $payment_proof = null;
+        if (! empty($_FILES['payment_proof']['name'])) {
+            $targetDir = "uploads/";
+            if (! is_dir($targetDir)) {
+                mkdir($targetDir, 0777, true);
+            }
+            $fileName   = time() . "_" . basename($_FILES["payment_proof"]["name"]);
+            $targetFile = $targetDir . $fileName;
+            move_uploaded_file($_FILES["payment_proof"]["tmp_name"], $targetFile);
+            $payment_proof = $targetFile;
+        }
+
+        $booking_id      = null;
+        $special_request = $temperature ?? null;
+
+        $stmt_order = $conn->prepare("
+    INSERT INTO order_items
+    (client_id, booking_id, menu_id, order_quantity, order_amount, order_date, special_request)
+    VALUES (?, ?, ?, ?, ?, NOW(), ?)
+");
+        $stmt_order->bind_param("iiidss",
+            $client_id,
+            $booking_id,
+            $menu_id,
+            $quantity,
+            $subtotal,
+            $special_request
+        );
+        $stmt_order->execute();
+
+        $order_item_id = $stmt_order->insert_id;
+
+        $stmt_payment = $conn->prepare("
+        INSERT INTO payment
         (payment_date, payment_amount, payment_method, client_id, order_item_id, payment_type, payment_proof, payment_reference)
-        VALUES 
+        VALUES
         (NOW(), ?, ?, ?, ?, 'Order', ?, ?)
     ");
-    $stmt_payment->bind_param("dsiiss", $total, $payment_method, $client_id, $order_item_id, $payment_proof, $payment_reference);
-    $stmt_payment->execute();
-    $payment_id = $stmt_payment->insert_id;
+        $stmt_payment->bind_param("dsiiss", $total, $payment_method, $client_id, $order_item_id, $payment_proof, $payment_reference);
+        $stmt_payment->execute();
+        $payment_id = $stmt_payment->insert_id;
 
-    header("Location: thankyou.php?payment_id=" . $payment_id);
-    exit();
-}
+        header("Location: thankyou.php?payment_id=" . $payment_id);
+        exit();
+    }
 ?>
 
 <!DOCTYPE html>
@@ -165,7 +179,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 </div>
 
 <script>
-const pricePerItem = <?php echo $price; ?>;
+const pricePerItem =                     <?php echo $price; ?>;
 
 const quantityInput = document.getElementById('quantity');
 const totalEl = document.getElementById('total');

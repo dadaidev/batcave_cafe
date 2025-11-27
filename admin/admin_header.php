@@ -23,16 +23,16 @@ require_once 'admin_authorization.php';
     </div>
 
     <nav class="admin-nav">
-        <ul>
+        <ul>    
             <li><a href="admin_dashboard.php">Dashboard</a></li>
             <li><a href="admin_client.php">Users</a></li>
             <li><a href="admin_menu.php">Menu</a></li>
-            <li><a href="admin_order.php">Orders</a></li>
-            <li><a href="admin_booking.php">Bookings</a></li>
-            <li><a href="admin_payment.php">Payments</a></li>
             <li><a href="admin_equipment.php">Equipment</a></li>
             <li><a href="admin_seats.php">Table Seats</a></li>
-            <li><a href="logout.php">Logout</a></li>
+            <li><a href="booking_list.php">Bookings</a></li>
+            <li><a href="admin_payment.php">Payments</a></li>
+            <li><a href="admin_order.php">Orders</a></li>
+            <li><a href="../user_role.php">Logout</a></li>
         </ul>
     </nav>
     </div>

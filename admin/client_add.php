@@ -2,48 +2,75 @@
 require_once 'admin_authorization.php';
 require_login();
 require 'admin_header.php';
-require '../includes/db.php';  
-$message = "";
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    $username = $_POST['client_username'];
+    $password = password_hash($_POST['client_password'], PASSWORD_DEFAULT); // hash password
+    $email = $_POST['client_emailaddress'];
+    $contact = $_POST['client_contactnumber'];
+    $fname = $_POST['client_fname'];
+    $lname = $_POST['client_lname'];
+    $mname = $_POST['client_mname'] ?? '';
+    $role = $_POST['client_role'] ?? 'customer';
 
-    $stmt = $pdo->prepare("
-        INSERT INTO client (client_username, client_password, client_fname, client_lname, client_emailaddress, client_contactnumber, client_role)
-        VALUES (:u, :p, :fn, :ln, :e, :c, :r)
-    ");
-
+    $stmt = $pdo->prepare("INSERT INTO client 
+        (client_username, client_password, client_emailaddress, client_contactnumber, client_fname, client_lname, client_mname, client_role) 
+        VALUES (:username, :password, :email, :contact, :fname, :lname, :mname, :role)");
     $stmt->execute([
-        ':u' => $_POST['username'],
-        ':p' => $_POST['password'],  
-        ':fn' => $_POST['fname'],
-        ':ln' => $_POST['lname'],
-        ':e' => $_POST['email'],
-        ':c' => $_POST['contact'],
-        ':r' => $_POST['role'],
+        ':username' => $username,
+        ':password' => $password,
+        ':email' => $email,
+        ':contact' => $contact,
+        ':fname' => $fname,
+        ':lname' => $lname,
+        ':mname' => $mname,
+        ':role' => $role
     ]);
 
-    header("Location: admin_client.php?added=1");
+    header('Location: admin_client.php');
     exit;
 }
 ?>
 
-
-
-<div class="admin-form">
-    <h2>Add Client</h2>
-    <form method="POST">
-        <input type="text" name="username" placeholder="Username" required class="form-control mb-2">
-        <input type="text" name="password" placeholder="Password" required class="form-control mb-2">
-        <input type="text" name="fname" placeholder="First Name" required class="form-control mb-2">
-        <input type="text" name="lname" placeholder="Last Name" required class="form-control mb-2">
-        <input type="email" name="email" placeholder="Email" required class="form-control mb-2">
-        <input type="text" name="contact" placeholder="Contact" required class="form-control mb-2">
-
-        <select name="role" class="form-control mb-2" required>
-            <option value="user">User</option>
-            <option value="admin">Admin</option>
-        </select>
-
-        <button class="btn btn-success">Add Client</button>
+<div class="container mt-5">
+    <h1>Add New Client</h1>
+    <form method="POST" class="mt-3">
+        <div class="mb-3">
+            <label>Username</label>
+            <input type="text" name="client_username" class="form-control" required>
+        </div>
+        <div class="mb-3">
+            <label>Password</label>
+            <input type="password" name="client_password" class="form-control" required>
+        </div>
+        <div class="mb-3">
+            <label>First Name</label>
+            <input type="text" name="client_fname" class="form-control" required>
+        </div>
+        <div class="mb-3">
+            <label>Middle Name</label>
+            <input type="text" name="client_mname" class="form-control">
+        </div>
+        <div class="mb-3">
+            <label>Last Name</label>
+            <input type="text" name="client_lname" class="form-control" required>
+        </div>
+        <div class="mb-3">
+            <label>Email</label>
+            <input type="email" name="client_emailaddress" class="form-control" required>
+        </div>
+        <div class="mb-3">
+            <label>Contact Number</label>
+            <input type="text" name="client_contactnumber" class="form-control" required>
+        </div>
+        <div class="mb-3">
+            <label>Role</label>
+            <select name="client_role" class="form-select">
+                <option value="customer">Customer</option>
+                <option value="admin">Admin</option>
+            </select>
+        </div>
+        <button type="submit" class="btn btn-primary">Add Client</button>
+        <a href="admin_client.php" class="btn btn-secondary">Back</a>
     </form>
 </div>

@@ -1,7 +1,6 @@
 <?php
     require_once 'admin_authorization.php';
     require_login();
-    require 'admin_header.php';
     require '../includes/db.php';
 
     $message = "";
@@ -49,7 +48,11 @@
 
     <input type="file" name="menu_image" required><br><br>
 
-    <button type="submit">Add</button>
+    <div class="d-flex gap-2 mt-3">
+        <button type="submit" class="btn btn-success flex-fill">Add</button>
+        <a href="admin_menu.php" class="btn btn-secondary flex-fill">Back to Menu List</a>
+    </div>
+
 </form>
 </diV>
 
